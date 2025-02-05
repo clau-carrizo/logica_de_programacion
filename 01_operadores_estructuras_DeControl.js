@@ -1,4 +1,21 @@
-// *** Tipos de operadores *** 
+// Interpolación 
+  const nombre = 'Claudia';
+  const edad = 25;
+  const mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
+  console.log(mensaje); // "Hola, mi nombre es Claudia y tengo 25 años."
+
+// // *** Tipos de operadores *** 
+/* Aritméticos
+  Asignación 
+  Comparación
+  Lógicos
+  Identidad
+  Pertenencia
+  Bit
+
+*/
+
+
 
 // Operadores Aritméticos 
 // realizan operaciones matemáticas básicas
@@ -9,7 +26,8 @@
 // multiplicación
 // division
 
-// modulo
+// módulo (%):el resto de la división entre dos números.
+
 const modulo = 15 % 8; // 7
 
 //exponenciación o potencia
@@ -31,43 +49,100 @@ console.log(raizCuadrada);
 console.log(valorAbsoluto);
 console.log(aleatorio);
 
-// Operadores de Asignación
-// asignan valores a variables y actualizan sus valores
-//-----------------------------------------------------
+// *** Operadores de Asignación
+// asignan a variables y actualizan sus valores
+//---------------------------------------------
 
 // =  asignación simple
+let my_number = 8;
+console.log(my_number);
 // += asignación con suma
+console.log(my_number += 1);
 // -= asignación con resta
 // *= asignación con multiplicación
-// /= asignación con división
+// /= asignación con división 
+// //= asignación con división entera
 // %= asignación con modulo
+console.log(my_number % 2);
+// ** exponente y asignación
 
-// Operadores de Comparación
-// comparan dos valores y devuelven un valor booleano
-//---------------------------------------------------
+
+// *** Operadores de Comparación
+// comparan dos valores y un valor booleano
+//-----------------------------------------
 
 // ==   Igual a (comparación de valor)
+console.log(`Igualdad: 10 == 3 -> ${10 == 3}`);//false
 // === Igual a (comparación de valor y tipo)
 // !=  No igual a (comparación de valor)
+console.log(`Igualdad: 10 == 3 -> ${10 != 3}`);//true
 // !== No igual a (comparación de valor y tipo)
 // >   Mayor que
+console.log(`Mayor que : 10 > 3 -> ${10 > 3}`);//true
 // <   Menor que
 // >=  Mayor o igual que
 // <=  Menor o igual que
 
-// Operadores Lógicos
+// *** Operadores Lógicos
 // Se utilizan para combinar valores booleanos
 //--------------------------------------------
 
 // && Y lógico
+console.log(`&& : 10 + 3 == 13 AND 5 - 1 == 4 -> es ${10 + 3 == 13 && 5 - 1 == 4}`);//true
+
+true && true; //true
+true && false; //false
+false && true; //false
+123 && 'abc'; //'abc'
+
 // || O lógico
-// !  Negación lógica
+console.log(`||: 10 + 3 == 13 O 5 - 1 == 4 -> es ${10 + 3 == 13 || 5 - 1 == 4}`);//true
 
-// Operadores de Incremento/Decremento
-// Aumentan o disminuyen el valor de una variable en uno
+true || false; //true
+false || false; //false
+'abc' || null; //'abc'
+console.log(`${0 || 'gato'}`); //'gato'
 
-// ++  Incremento
-// --  Decremento
+// !  Negación lógica  .  Invierte el valor del operando
+console.log(`NOT : not 10 + 3 == 14 es ${!(10 + 3 == 14)}`);//true
+
+!true; //false
+!false; //true
+
+var spam = ''; 
+var booSpam = !spam; //true porque la cadena vacía se considera falsa
+
+// *** Operadores de Identidad 
+// aplican a numeros, cadenas de texo, objetos.
+// compara el valor de la posición de memoria
+
+// Caso True
+
+let obj1 = { valor: 10 };
+let obj2 = obj1; // Ambas variables apuntan al mismo objeto en memoria
+
+console.log(obj1 === obj2); // true
+
+// Caso false
+
+let obj3 = { valor: 10 };
+let obj4 = { valor: 10 }; // Aunque tienen el mismo contenido, son objetos diferentes
+
+console.log(obj3 === obj4); // false
+
+
+//Operadores de pertenencia
+//para conjuntos, estructuras
+
+console.log(`'u' en 'Claudia': ${'Claudia'.includes('u')}`); // true
+
+//Negación
+const nombre1 = 'Claudia';
+const letra = 'x';
+
+console.log(`'${letra}' no está en '${nombre1}': ${!nombre1.includes(letra)}`); // true
+
+
 
 //Operadores de Bit a Bit (Bitwise)
 // Manipulan los bits de los números
@@ -82,12 +157,20 @@ console.log(aleatorio);
 // >>> Desplazamiento a la derecha sin signo
 
 
+
+// Operadores de Incremento/Decremento
+// Aumentan o disminuyen el valor de una variable en uno
+
+// ++  Incremento
+// --  Decremento
+
+
 // Operadores Especiales
 //----------------------
 
-// typeof: Devuelve el tipo de dato de una variable.
+// typeof:el tipo de dato de una variable.
 // instanceof: Verifica si un objeto es una instancia de una clase o constructor.
-// void: Evalúa una expresión y devuelve undefined.
+// void: Evalúa una expresión yundefined.
 // delete: Elimina una propiedad de un objeto.
 
 //------------------------------------------------------------
