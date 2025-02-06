@@ -114,6 +114,7 @@ var booSpam = !spam; //true porque la cadena vacía se considera falsa
 // *** Operadores de Identidad 
 // aplican a numeros, cadenas de texo, objetos.
 // compara el valor de la posición de memoria
+//----------------------------------
 
 // Caso True
 
@@ -132,6 +133,7 @@ console.log(obj3 === obj4); // false
 
 //Operadores de pertenencia
 //para conjuntos, estructuras
+//----------------------------------
 
 console.log(`'u' en 'Claudia': ${'Claudia'.includes('u')}`); // true
 
@@ -179,7 +181,7 @@ console.log(resultado1); // Imprime: 1073741822
 
 // typeof:el tipo de dato de una variable.
 // instanceof: Verifica si un objeto es una instancia de una clase o constructor.
-// void: Evalúa una expresión yundefined.
+// void: Evalúa una expresión y undefined.
 // delete: Elimina una propiedad de un objeto.
 
 //------------------------------------------------------------
@@ -203,7 +205,7 @@ else{
   console.log('my_string no es "Claudia"')
 }
 
-// Iterativas
+// Iterativas Bucles
 
 // Sirve para recorrer una estructura de mas de un elemento
 // o para ejecutar una misma acción varias veces
@@ -218,11 +220,40 @@ while (i <= 10) {
     i++;
 }
 
+//------------------------------------------------------------
+
+// *** Estructuras de control para manejo de excepciones
+
+//------------------------------------------------------------
+
+function dividir(a, b) {
+  if (b === 0) {
+      throw new Error("No se puede dividir por cero."); //LANZAR una excepción manualmente
+  }
+  return a / b;
+}
+
+try { //INTENTAR
+  let resultado = dividir(10, 0);
+  console.log(resultado);
+} catch (error) { //ATRAPAR
+  console.error("Ocurrió un error:", error.message);// Aquí mensaje THROW error
+} finally { //FINALMENTE
+  console.log("La operación de división ha finalizado.");
+}
+
+
 //----------------------------------------------------------------
+
+// *** Extra
+
+//------------------------------------------------------------
 
 function numberBetween () {
   for(let number = 10 ; number <=55; number++){
-    if (number % 2 === 0 && number != 16 && number % 3 !== 0){
+    if (number % 2 === 0 && number != 16 && number % 3 !== 0){ 
+      // si el modulo 2 de number es 0 es par 
+      // si el modulo 3 de number es 0 es multiplo de 3
       console.log(number);
     }
   }
