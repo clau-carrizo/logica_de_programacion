@@ -11,8 +11,7 @@
   Lógicos
   Identidad
   Pertenencia
-  Bit
-
+  Bit a Bit (Bitwise)
 */
 
 
@@ -157,12 +156,15 @@ console.log(`OR; 10 | 3 = ${10 | 3}`); // 1011 = 11
 // ^ XOR si los operadores son diferentes el resultado es 1
 console.log(`XOR; 10 ^ 3 = ${10 ^ 3}`); // 1001 = 9
 // ~ NOT intercambia los valores (negándolos)
-console.log(`NOT; 10 ~ 3 = ${~(10 & 3)}`) ; // 1101 = 13
-
-// << Desplazamiento a la izquierda
+console.log(`NOT; ~ 10 = ${~ 10}`) ; // ~10 = -(10 + 1) = -11
 // >> Desplazamiento a la derecha
+console.log(`Desplazamiento a la derecha: 10 >> 2 = ${10 >> 2}`); // 1010 = 0010 = 2
+// << Desplazamiento a la izquierda
+console.log(`Desplazamiento a la izquierda: 10 << 2 = ${10 << 2}`); // 1010 = 101000 =40
 // >>> Desplazamiento a la derecha sin signo
-
+let numero = -8; // En binario: 11111111111111111111111111111000
+let resultado1 = numero >>> 2; // Desplazamos 2 bits a la derecha
+console.log(resultado1); // Imprime: 1073741822
 
 
 // Operadores de Incremento/Decremento
