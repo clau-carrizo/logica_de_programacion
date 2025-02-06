@@ -148,10 +148,17 @@ console.log(`'${letra}' no está en '${nombre1}': ${!nombre1.includes(letra)}`);
 // Manipulan los bits de los números
 //----------------------------------
 
-// & AND a nivel de bits
-// | OR a nivel de bits
-// ^ XOR a nivel de bits
-// ~ NOT a nivel de bits
+a = 10;// 1010
+b = 3; // 0011
+// & AND 1 & 1 = 1 != ! 1 & 0 = 0
+console.log(`AND; 10 & 3 = ${10 & 3}`); // 0010 = 2
+// | OR Si un operador es 1 el resultado es 1
+console.log(`OR; 10 | 3 = ${10 | 3}`); // 1011 = 11
+// ^ XOR si los operadores son diferentes el resultado es 1
+console.log(`XOR; 10 ^ 3 = ${10 ^ 3}`); // 1001 = 9
+// ~ NOT intercambia los valores (negándolos)
+console.log(`NOT; 10 ~ 3 = ${~(10 & 3)}`) ; // 1101 = 13
+
 // << Desplazamiento a la izquierda
 // >> Desplazamiento a la derecha
 // >>> Desplazamiento a la derecha sin signo
