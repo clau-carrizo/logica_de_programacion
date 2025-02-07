@@ -1,22 +1,21 @@
-// Interpolación 
-  const nombre = 'Claudia';
-  const edad = 25;
-  const mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
-  console.log(mensaje); // "Hola, mi nombre es Claudia y tengo 25 años."
+// Interpolación
+const nombre = "Claudia";
+const edad = 25;
+const mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
+console.log(mensaje); // "Hola, mi nombre es Claudia y tengo 25 años."
 
-// // *** Tipos de operadores *** 
+// // *** Tipos de operadores ***
 /* Aritméticos
   Asignación 
   Comparación
   Lógicos
   Identidad
   Pertenencia
-  Bit a Bit (Bitwise)
+  Bit
+
 */
 
-
-
-// Operadores Aritméticos 
+// Operadores Aritméticos
 // realizan operaciones matemáticas básicas
 //-----------------------------------------
 
@@ -30,7 +29,7 @@
 const modulo = 15 % 8; // 7
 
 //exponenciación o potencia
-const exponenciacion = 2 ** 3 // 8
+const exponenciacion = 2 ** 3; // 8
 
 // Solucionar problemas de precisión
 
@@ -39,10 +38,10 @@ console.log(resultado);
 console.log(resultado.toFixed(1)); // asigna cantidad de valores luego del punto
 console.log(resultado === 0.3); //  comprueba datos (valor y tipo)
 
-//OPERACIONES AVANZADAS 
-const raizCuadrada = Math.sqrt(16)
-const valorAbsoluto = Math.abs(-7) 
-const aleatorio = Math.random()
+//OPERACIONES AVANZADAS
+const raizCuadrada = Math.sqrt(16);
+const valorAbsoluto = Math.abs(-7);
+const aleatorio = Math.random();
 
 console.log(raizCuadrada);
 console.log(valorAbsoluto);
@@ -56,28 +55,27 @@ console.log(aleatorio);
 let my_number = 8;
 console.log(my_number);
 // += asignación con suma
-console.log(my_number += 1);
+console.log((my_number += 1));
 // -= asignación con resta
 // *= asignación con multiplicación
-// /= asignación con división 
+// /= asignación con división
 // //= asignación con división entera
 // %= asignación con modulo
 console.log(my_number % 2);
 // ** exponente y asignación
-
 
 // *** Operadores de Comparación
 // comparan dos valores y un valor booleano
 //-----------------------------------------
 
 // ==   Igual a (comparación de valor)
-console.log(`Igualdad: 10 == 3 -> ${10 == 3}`);//false
+console.log(`Igualdad: 10 == 3 -> ${10 == 3}`); //false
 // === Igual a (comparación de valor y tipo)
 // !=  No igual a (comparación de valor)
-console.log(`Igualdad: 10 == 3 -> ${10 != 3}`);//true
+console.log(`Igualdad: 10 == 3 -> ${10 != 3}`); //true
 // !== No igual a (comparación de valor y tipo)
 // >   Mayor que
-console.log(`Mayor que : 10 > 3 -> ${10 > 3}`);//true
+console.log(`Mayor que : 10 > 3 -> ${10 > 3}`); //true
 // <   Menor que
 // >=  Mayor o igual que
 // <=  Menor o igual que
@@ -87,34 +85,37 @@ console.log(`Mayor que : 10 > 3 -> ${10 > 3}`);//true
 //--------------------------------------------
 
 // && Y lógico
-console.log(`&& : 10 + 3 == 13 AND 5 - 1 == 4 -> es ${10 + 3 == 13 && 5 - 1 == 4}`);//true
+console.log(
+  `&& : 10 + 3 == 13 AND 5 - 1 == 4 -> es ${10 + 3 == 13 && 5 - 1 == 4}`
+); //true
 
 true && true; //true
 true && false; //false
 false && true; //false
-123 && 'abc'; //'abc'
+123 && "abc"; //'abc'
 
 // || O lógico
-console.log(`||: 10 + 3 == 13 O 5 - 1 == 4 -> es ${10 + 3 == 13 || 5 - 1 == 4}`);//true
+console.log(
+  `||: 10 + 3 == 13 O 5 - 1 == 4 -> es ${10 + 3 == 13 || 5 - 1 == 4}`
+); //true
 
 true || false; //true
 false || false; //false
-'abc' || null; //'abc'
-console.log(`${0 || 'gato'}`); //'gato'
+"abc" || null; //'abc'
+console.log(`${0 || "gato"}`); //'gato'
 
 // !  Negación lógica  .  Invierte el valor del operando
-console.log(`NOT : not 10 + 3 == 14 es ${!(10 + 3 == 14)}`);//true
+console.log(`NOT : not 10 + 3 == 14 es ${!(10 + 3 == 14)}`); //true
 
 !true; //false
 !false; //true
 
-var spam = ''; 
+var spam = "";
 var booSpam = !spam; //true porque la cadena vacía se considera falsa
 
-// *** Operadores de Identidad 
+// *** Operadores de Identidad
 // aplican a numeros, cadenas de texo, objetos.
 // compara el valor de la posición de memoria
-//----------------------------------
 
 // Caso True
 
@@ -130,44 +131,28 @@ let obj4 = { valor: 10 }; // Aunque tienen el mismo contenido, son objetos difer
 
 console.log(obj3 === obj4); // false
 
-
 //Operadores de pertenencia
 //para conjuntos, estructuras
-//----------------------------------
 
-console.log(`'u' en 'Claudia': ${'Claudia'.includes('u')}`); // true
+console.log(`'u' en 'Claudia': ${"Claudia".includes("u")}`); // true
 
 //Negación
-const nombre1 = 'Claudia';
-const letra = 'x';
+const nombre1 = "Claudia";
+const letra = "x";
 
 console.log(`'${letra}' no está en '${nombre1}': ${!nombre1.includes(letra)}`); // true
-
-
 
 //Operadores de Bit a Bit (Bitwise)
 // Manipulan los bits de los números
 //----------------------------------
 
-a = 10;// 1010
-b = 3; // 0011
-// & AND 1 & 1 = 1 != ! 1 & 0 = 0
-console.log(`AND; 10 & 3 = ${10 & 3}`); // 0010 = 2
-// | OR Si un operador es 1 el resultado es 1
-console.log(`OR; 10 | 3 = ${10 | 3}`); // 1011 = 11
-// ^ XOR si los operadores son diferentes el resultado es 1
-console.log(`XOR; 10 ^ 3 = ${10 ^ 3}`); // 1001 = 9
-// ~ NOT intercambia los valores (negándolos)
-console.log(`NOT; ~ 10 = ${~ 10}`) ; // ~10 = -(10 + 1) = -11
-// >> Desplazamiento a la derecha
-console.log(`Desplazamiento a la derecha: 10 >> 2 = ${10 >> 2}`); // 1010 = 0010 = 2
+// & AND a nivel de bits
+// | OR a nivel de bits
+// ^ XOR a nivel de bits
+// ~ NOT a nivel de bits
 // << Desplazamiento a la izquierda
-console.log(`Desplazamiento a la izquierda: 10 << 2 = ${10 << 2}`); // 1010 = 101000 =40
+// >> Desplazamiento a la derecha
 // >>> Desplazamiento a la derecha sin signo
-let numero = -8; // En binario: 11111111111111111111111111111000
-let resultado1 = numero >>> 2; // Desplazamos 2 bits a la derecha
-console.log(resultado1); // Imprime: 1073741822
-
 
 // Operadores de Incremento/Decremento
 // Aumentan o disminuyen el valor de una variable en uno
@@ -175,13 +160,12 @@ console.log(resultado1); // Imprime: 1073741822
 // ++  Incremento
 // --  Decremento
 
-
 // Operadores Especiales
 //----------------------
 
 // typeof:el tipo de dato de una variable.
 // instanceof: Verifica si un objeto es una instancia de una clase o constructor.
-// void: Evalúa una expresión y undefined.
+// void: Evalúa una expresión yundefined.
 // delete: Elimina una propiedad de un objeto.
 
 //------------------------------------------------------------
@@ -192,20 +176,17 @@ console.log(resultado1); // Imprime: 1073741822
 
 // Condicionales
 
-let my_string = 'Monica';
+let my_string = "Monica";
 
-
-if (my_string == 'Claudia') {
-  console.log('my_string es "Claudia"')
-}
-else if (my_string == 'Monica') {
-  console.log('my_string es "Monica"')
-}
-else{
-  console.log('my_string no es "Claudia"')
+if (my_string == "Claudia") {
+  console.log('my_string es "Claudia"');
+} else if (my_string == "Monica") {
+  console.log('my_string es "Monica"');
+} else {
+  console.log('my_string no es "Claudia"');
 }
 
-// Iterativas Bucles
+// Iterativas
 
 // Sirve para recorrer una estructura de mas de un elemento
 // o para ejecutar una misma acción varias veces
@@ -216,44 +197,15 @@ for (let i = 0; i < 11; i++) {
 
 let i = 1;
 while (i <= 10) {
-    console.log(i);
-    i++;
+  console.log(i);
+  i++;
 }
-
-//------------------------------------------------------------
-
-// *** Estructuras de control para manejo de excepciones
-
-//------------------------------------------------------------
-
-function dividir(a, b) {
-  if (b === 0) {
-      throw new Error("No se puede dividir por cero."); //LANZAR una excepción manualmente
-  }
-  return a / b;
-}
-
-try { //INTENTAR
-  let resultado = dividir(10, 0);
-  console.log(resultado);
-} catch (error) { //ATRAPAR
-  console.error("Ocurrió un error:", error.message);// Aquí mensaje THROW error
-} finally { //FINALMENTE
-  console.log("La operación de división ha finalizado.");
-}
-
 
 //----------------------------------------------------------------
 
-// *** Extra
-
-//------------------------------------------------------------
-
-function numberBetween () {
-  for(let number = 10 ; number <=55; number++){
-    if (number % 2 === 0 && number != 16 && number % 3 !== 0){ 
-      // si el modulo 2 de number es 0 es par 
-      // si el modulo 3 de number es 0 es multiplo de 3
+function numberBetween() {
+  for (let number = 10; number <= 55; number++) {
+    if (number % 2 === 0 && number != 16 && number % 3 !== 0) {
       console.log(number);
     }
   }

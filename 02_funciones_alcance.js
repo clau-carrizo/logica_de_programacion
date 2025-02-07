@@ -12,56 +12,6 @@ con retorno - sin retorno
 se puede designar el orden del posicionamiento de los parámetros
 */
 
-// Auto-ejecutable
-
-(function () {
-  console.log('Auto-ejecutable');
-})();
-
-// Función por Declaración
-
-function greet3() {
-  return console.log('Hola Mundo');
-}
-greet();
-
-
-//Función por Expresión 
-
-function greet2() {
-  return console.log('Hi');
-};
-
-greet2();
-
-
-//Función Anónima
-
-let anonima = function () {
-  return console.log('Sin Nombre');
-};
-
-anonima();
-
-//Función Flecha
-
-let flecha = function () {
-  return console.log('Función Flecha');
-};
-
-flecha();
-
-//Callbacks
-
-let funB = function () {
-  return console.log('Función B ejecutada');
-};
-
-let funA = function (callback) {
-  callback();
-};
-funA(funB);
-
 
 //----------------------------------------------
 
@@ -122,9 +72,11 @@ function return_args_greet(greet, name) {
 
 console.log(return_args_greet("Hi", "Claudita"));
 
-//----------------------------------------------
+ ///////////////////////////////////////////////////
+
 // *** MULTIPLE RETORNO
-//En JavaScript, no existe un mecanismo nativo para devolver múltiples valores, pero se puede emular utilizando ARRAYS U OBJETOS
+// En JavaScript, no existe un mecanismo nativo para devolver múltiples valores, 
+// se puede emular utilizando ARRAYS U OBJETOS
 
 // Con retorno de varios valores
 
@@ -150,6 +102,80 @@ const { greet, name } = multiple_return_greet();
 console.log(greet);  // Hola
 console.log(name);   // JavaScript
 
+// las siguientes 2 son habituales de phyton 
+
+//1. Con un número variable de argumentos
+
+function variable_arg_greet(...names) {
+  for (let name of names) {
+    console.log(`Hola, ${name} !`);
+  }
+}
+
+variable_arg_greet('Monica', 'Claudia', 'Carrizo'); //argumentos separados por coma (,)
+
+//2. Con un número variable de argumentos con palabra clave
+
+function variable_key_arg_greet(names) {
+  for (const key in names) {
+    if (names.hasOwnProperty(key)) { //hasOwnProperty es un método que evita iterar sobre prop heredadas
+      console.log(`${names[key]} (${key})!`);
+    }
+  }
+}
+
+variable_key_arg_greet({
+  language: "Js",
+  name: "Claudia",
+  alias: "Clau",
+  age: 36
+});
+
+//----------------------------------------------------
+// *** CLOSERS(cierre)*** 
+//"Un closure permite que una función acceda a      variables de un ámbito contenedor(scope)."
+
+// funciones dentro de otras funciones
+
+function func_externa() { //1 llama a 2
+  function func_interna() { // 3 ejecuta
+    console.log('Función interna: Hola, Js');
+  }
+  func_interna(); //2 llama a 3
+}
+
+func_externa(); // ejecuto 1
+
+//--------------------------------------------------------------
+
+// *** FUNCIONES DEL LENGUAJE (BUILT-IN *biltin)  ***
+// Métodos predeterminados del lenguaje JS
+
+console.log('Claudia'.length);
+console.log(typeof 'Claudia');
+console.log('Claudia'.toUpperCase());  //modifica el elemento 
+
+//etc
+
+//---------------------------------------------------------------
+// *** SCOPE ***
+
+// Variables locales y globales
+
+global_var = 'JavaScript'
+
+function hello_Js() {
+  local_var = 'Hi'
+  console.log(`${local_var}, ${global_var}!`);
+}
+
+console.log(global_var);
+//console.log(local_var); //No se puede acceder desde fuera de la función
+
+hello_Js();
+
+//--------------------------------------------------------------------
+
 
 
 
@@ -174,6 +200,7 @@ console.log(greet4, name2);
 
 
 // Sin retorno
+// Si una función no devuelve un valor explícitamente, JavaScript devuelve automáticamente undefined
 
 let sinReturn = function () {
   console.log('Sin return');
@@ -193,73 +220,59 @@ let sinParametros = function () {
 
 
 
-// Con un número variable de argumentos
 
-function variable_arg_greet(...names) {
-  for (let name of names) {
-    console.log(`Hola, ${name} !`);
-  }
+
+
+// Auto-ejecutable
+
+(function () {
+  console.log('Auto-ejecutable');
+})();
+
+// Función por Declaración
+
+function greet3() {
+  return console.log('Hola Mundo');
 }
+greet();
 
-variable_arg_greet('Monica', 'Claudia', 'Carrizo');
 
-// Con un número variable de argumentos con palabra clave
+//Función por Expresión 
 
-function variable_key_arg_greet(names) {
-  for (const key in names) {
-    if (names.hasOwnProperty(key)) { //hasOwnProperty es un método que evita iterar sobre prop heredadas
-      console.log(`${names[key]} (${key})!`);
-    }
-  }
-}
+function greet2() {
+  return console.log('Hi');
+};
 
-variable_key_arg_greet({
-  language: "Js",
-  name: "Claudia",
-  alias: "Clau",
-  age: 36
-});
+greet2();
 
-//----------------------------------------------------
-// *** CLOSERS ***
 
-// funciones dentro de otras funciones
+//Función Anónima
 
-function func_externa() { //1 llama a 2
-  function func_interna() { // 3 ejecuta
-    console.log('Función interna: Hola, Js');
-  }
-  func_interna(); //2 llama a 3
-}
+let anonima = function () {
+  return console.log('Sin Nombre');
+};
 
-func_externa(); // ejecuto 1
+anonima();
 
-//--------------------------------------------------------------
+//Función Flecha
 
-// *** FUNCIONES DEL LENGUAJE (BUILT-IN) ***
+let flecha = function () {
+  return console.log('Función Flecha');
+};
 
-console.log('Claudia'.length);
-console.log(typeof 'Claudia');
-console.log('Claudia'.toUpperCase());  //modifica el elemento 
+flecha();
 
-//---------------------------------------------------------------
-// *** SCOPE ***
+//Callbacks
 
-// Variables locales y globales
+let funB = function () {
+  return console.log('Función B ejecutada');
+};
 
-global_var = 'JavaScript'
+let funA = function (callback) {
+  callback();
+};
+funA(funB);
 
-function hello_Js() {
-  local_var = 'Hi'
-  console.log(`${local_var}, ${global_var}!`);
-}
-
-console.log(global_var);
-//console.log(local_var); //No se puede acceder desde fuera de la función
-
-hello_Js();
-
-//--------------------------------------------------------------------
 
 //Ejercicio Extra
 
