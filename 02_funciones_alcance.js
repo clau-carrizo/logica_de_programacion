@@ -1,9 +1,12 @@
+//-------------------------------------------------------
+
 // Funciones básicas = Funciones definidas por el usuario
+
+//-------------------------------------------------------
 
 // *** TIPOS DE FUNCIONES ***
 /*
-Funciones con 
-parámetros - mas de un parámetro
+Funciones con parámetros - mas de un parámetro
 valor por defecto 
 con retorno - sin retorno 
 se puede designar el orden del posicionamiento de los parámetros
@@ -17,11 +20,11 @@ se puede designar el orden del posicionamiento de los parámetros
 
 // Función por Declaración
 
-function greet() {
+function greet3() {
   return console.log('Hola Mundo');
 }
 greet();
-greet();
+
 
 //Función por Expresión 
 
@@ -59,10 +62,12 @@ let funA = function (callback) {
 };
 funA(funB);
 
+
 //----------------------------------------------
 
 // *** FORMA DE USO DE FUNCIONES ***
 
+//----------------------------------------------
 
 // Simple
 
@@ -74,11 +79,99 @@ greet();
 
 // Con retorno
 
-function return_greet() {
-  return 'Hola, JavaScript';
-};
+function return_greet(){
+  return('Hola, JavaScript ♥!')
+}
 
-console.log(return_greet());
+greet = return_greet();// guardo la Fn dentro de una variable
+console.log(greet);
+console.log(return_greet());// imprime directamente la Fn
+
+// Con un argumento
+
+function arg_greet(name){
+  console.log(`Hola, ${name}`);
+}
+
+arg_greet('Shazan!');
+
+//Con varios argumentos 
+
+function args_greet(greet, name) {
+  console.log(`${greet}, ${name}`);
+}
+
+args_greet("Hi", "Clau")
+args_greet(name = "Clau", greet = "Hi") // cambiando la posición 
+
+// Con argumento predeterminado
+
+function default_arg_greet(name = 'JS') {
+  console.log(`Hola, ${name} !`);
+}
+
+default_arg_greet('Claus');// Hola, Claus !
+default_arg_greet();// Hola, JS !
+
+// Con argumentos y return   
+
+function return_args_greet(greet, name) {
+
+  return`${greet}, ${name}!`;
+}
+
+console.log(return_args_greet("Hi", "Claudita"));
+
+//----------------------------------------------
+// *** MULTIPLE RETORNO
+//En JavaScript, no existe un mecanismo nativo para devolver múltiples valores, pero se puede emular utilizando ARRAYS U OBJETOS
+
+// Con retorno de varios valores
+
+//*** Usando un array: 
+
+function multiple_return_greet() {
+  return ['Hola', 'JavaScript'];
+}
+
+const[greet, name] = multiple_return_greet();
+console.log(greet); //  Hola
+console.log(name);   //  JavaScript 
+console.log(name, greet);   //  JavaScript Hola 
+console.log(multiple_return_greet());   // [ 'Hola', 'JavaScript' ]
+
+//*** Usando un objeto:
+
+function multiple_return_greet() {
+  return { greet: 'Hola', name: 'JavaScript' };
+}
+
+const { greet, name } = multiple_return_greet();
+console.log(greet);  // Hola
+console.log(name);   // JavaScript
+
+
+
+
+
+
+
+
+
+
+
+const [greet4, name2] = multiple_return_greet() //Desestructuración del arreglo
+console.log(greet4);
+console.log(name2);
+console.log(greet4, name2);
+
+
+
+
+
+
+
+
 
 // Sin retorno
 
@@ -87,23 +180,6 @@ let sinReturn = function () {
 }
 sinReturn();
 
-//Con uno o varios argumentos 
-
-function args_greet(greet3, name) {
-  console.log(`${greet3}, ${name}`);
-}
-
-args_greet("Hi", "Clau")
-args_greet(name = "Clau", greet3 = "Hi")
-
-// Con argumento predeterminado
-
-function default_arg_greet(name = 'JS') {
-  console.log(`Hola, ${name} !`);
-}
-
-default_arg_greet('Claus');
-default_arg_greet();
 
 // Sin parámetros
 
@@ -111,26 +187,10 @@ let sinParametros = function () {
   return console.log('Sin parámetros');
 };
 
-// Con argumentos y return   
-
-function return_args_greet(greet, name) {
-
-  return console.log(`${greet}, ${name}!`);
-}
-
-return_args_greet("Hi", "Claudita")
 
 
-// Con retorno de varios valores
 
-function multiple_return_greet() {
-  return ['Hola', 'JavaScript'];
-}
 
-const [greet4, name2] = multiple_return_greet() //Desestructuración del arreglo
-console.log(greet4);
-console.log(name2);
-console.log(greet4, name2);
 
 
 // Con un número variable de argumentos
