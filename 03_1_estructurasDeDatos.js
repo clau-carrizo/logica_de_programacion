@@ -377,3 +377,43 @@ No son nativas en JavaScript, pero se pueden implementar manualmente.
 9. Grafos (Graphs): Colecciones de nodos conectados por bordes. No son nativas en JavaScript, pero se pueden implementar manualmente utilizando objetos o matrices.
 */
 
+// SORT() ordenamiento de Objetos
+const items = [
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 },
+];
+
+items.sort(function (a, b) {
+  if (a.name > b.name) {
+    return 1;
+  }
+  if (a.name < b.name) {
+    return -1;
+  }
+  return 0;
+});
+
+console.log(items);
+
+//Sort() ordena en orden ascendente (A - Z) por defecto
+//El método reverse() ordena en orden descendente (Z - A)
+
+//Ordenamiento numérico ASCENDENTE - usar funcion de comparacion que reste los números
+
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return a - b});
+console.log(numeros); // [3, 12, 23]
+
+//Ordenamiento numérico DESCENDENTE - usar funcion de comparacion que restar el segundo parametro del primero
+
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return b - a});
+console.log(numeros); // [23, 12, 3]
+
+/*El método sort() modifica el arreglo original. Si necesitas mantener el arreglo original intacto, crea una copia antes de ordenarlo.
+
+Para grandes arreglos, la función de comparación puede afectar el rendimiento. Considera usar una función map para mejorar el rendimiento en estos casos.
