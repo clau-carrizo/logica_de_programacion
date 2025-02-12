@@ -1,0 +1,20 @@
+autoejecutable
+declarativas
+expresion
+anonima
+flecha
+callbacks
+simple
+retorno
+con argumento
+con varios argumentos
+con argumento predeterminado
+con argumento y return
+multiple retorno
+con un numero variable de argumentos
+con un numero variable de argumentos con palabra clave
+closers
+scope
+
+enlace a deepseek :
+https://chat.deepseek.com/a/chat/s/0d70d22a-6162-4037-9dbf-25ae42a176f0
